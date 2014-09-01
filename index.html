@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="neurons/neuron.js"></script>
+  <script src="neurons/config.js"></script>
+  <script>
+    neuron.config({
+      path:"./neurons"
+    })
+  </script>
+</head>
+<body>
+
+  <script>
+
+    _use("request@1.0.0",function(R){
+      var $ = R.Zepto;
+
+      $.ajax({url:"/error?httpstatus=-901"});
+
+      $.ajax({url:"/error?httpstatus=-903"});
+
+      $.ajax({url:"/error?httpstatus=-910",timeout: 200});
+
+      $.ajax({url:"/error?httpstatus=-905"});
+
+      $.ajax({url:"/error?httpstatus=200"});
+      
+    });
+  </script>
+
+</body>
+</html>
